@@ -7,3 +7,5 @@ class Empleado:
     apellido=""
     ----------------------------------------------""
 "#1 masculino y 2 femenino"
+Sexo=0
+Salario=0
