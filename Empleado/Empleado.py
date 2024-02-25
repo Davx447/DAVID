@@ -38,3 +38,16 @@ def ConsultarNombreCompleto(self):
         nSalario = nSalario + self.Salario
         self.salario = nSalario
         return "El nuevo salario es de: "+self.salario
+        
+    def ConsignarDinero(Self, cantidad):
+        # Aqui va el codigo del metodo
+        Self.salario += cantidad
+        return cantidad
+    def RetirarDinero(self, cantidad):
+        # Aqui va el codigo del metodo
+        self.Salario -= cantidad
+        return cantidad
+    def DarInteresMensual(self, interes):
+        interes = self.salario * 0.06 
+        self.salario += interes
+        return "El nuevo salario es de: "+ self.salario
