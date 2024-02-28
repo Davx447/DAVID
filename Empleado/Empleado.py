@@ -39,6 +39,21 @@ def ConsultarNombreCompleto(self):
         self.salario = nSalario
         return "El nuevo salario es de: "+self.salario
         
+       def DuplicarSalario(self):
+        # Aqui va el codigo
+        # Forma 1
+        # Self.salario = self.salario*2
+        # Forma 2 pro
+        self.salario *= 2
+    def CalcularSalarioAnual(self):
+        # Aqui va el codigo
+        # self.Salario = self.salario*12
+        #Forma 1
+        SalarioAnual = self.salario*12
+        return SalarioAnual
+        #Forma 2
+        # return self.salario*12
+    
     def ConsignarDinero(Self, cantidad):
         # Aqui va el codigo del metodo
         Self.salario += cantidad
