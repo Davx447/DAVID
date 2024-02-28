@@ -1,4 +1,5 @@
 from CuentaAhorros import CuentaAhorros
+from CuentaCorriente import CuentaCorriente
 
 class SimuladorBancario:
     """
@@ -9,9 +10,8 @@ class SimuladorBancario:
     """---------------------------
     Asociaciones
     ------------------------------"""
-    SaldoCuentaCorriente=0
-    SaldoCuentaAhorros=0
-    SaldoTotal=0
+    SaldoCuentaCorriente= CuentaCorriente ()
+    SaldoCuentaAhorros= CuentaAhorros ()
     """-----------------------------
     Metodos
     ------------------------------"""
@@ -22,7 +22,7 @@ class SimuladorBancario:
     
     def CalcularSaldoTotal(self):
         #Aqui va el codigo
-        self.SaldoTotalotal= self.SaldoCuentaCorriente + self.SaldoCuentaAhorros
+        SaldoTotal= self.SaldoCuentaCorriente + self.SaldoCuentaAhorros
         return "Saldo total es" +self.SaldoTotal
     
     def TransferirSaldoCuentaCorrienteaCuentaAhorros(self):
