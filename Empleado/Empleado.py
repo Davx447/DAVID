@@ -1,3 +1,5 @@
+from Fecha import Fecha
+
 class Empleado:
     #Aqui va el codigo del empleado
     """-------------------------------------
