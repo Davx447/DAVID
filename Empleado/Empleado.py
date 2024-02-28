@@ -59,7 +59,16 @@ def ConsultarNombreCompleto(self):
         return SalarioAnual
         #Forma 2
         # return self.salario*12
-    
+    def ConsultarDiaCumpleanio(self):
+        return "El dia de su cumpleaños es: "+self.fechaNacimiento.ConsultarDia()
+    def CalcularImpuesto(self):
+
+        #forma 1
+        total = self.CalularSarlarioAnual()
+        return (total * 19.5) / 100
+        #forma 2
+        return self.CalcularSalarioAnual() * 0.195
+        
     def ConsignarDinero(Self, cantidad):
         # Aqui va el codigo del metodo
         Self.salario += cantidad
