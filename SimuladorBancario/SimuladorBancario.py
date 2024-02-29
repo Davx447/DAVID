@@ -11,9 +11,9 @@ class SimuladorBancario:
     """---------------------------
     Asociaciones
     ------------------------------"""
-    SaldoCuentaCorriente= CuentaCorriente ()
-    SaldoCuentaAhorros= CuentaAhorros ()
-    CDT = CDT ()
+    corriente = CuentaCorriente()
+    ahorros = CuentaAhorros()
+    cdt = CDT()
     """-----------------------------
     Metodos
     ------------------------------"""
