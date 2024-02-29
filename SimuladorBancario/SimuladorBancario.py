@@ -5,9 +5,9 @@ from CDT import CDT
 class SimuladorBancario:
     """
     Atributos"""
-    cedula =0
-    nombre =0
-    mesActual =0
+    cedula=""
+    nombre=""
+    mesActual=""
     """---------------------------
     Asociaciones
     ------------------------------"""
@@ -17,21 +17,35 @@ class SimuladorBancario:
     """-----------------------------
     Metodos
     ------------------------------"""
-    def ConsignarSaldoCorriente(self, saldo):
-        #Aqui va el codigo
-        return self.SaldoCuentaCorriente.ConsignarValor(saldo)
-    
+    def ConsignarCuentaCorriente(self, monto):
+        self.corriente.ConsignarMonto(monto)
+        
     def CalcularSaldoTotal(self):
-        #Aqui va el codigo
-        SaldoTotal= self.SaldoCuentaCorriente + self.SaldoCuentaAhorros
-        return "Saldo total es" + SaldoTotal
+     # Forma1
+        return self.corriente.ConsultarSaldo()+self.ahorros.ConsultarSaldo()
+        # #Forma2
+        # saldoAhorros = self.ahorros.ConsultarSaldo()
+        # saldoCorriente = self.corriente.ConsultarSaldo()
+        # return saldoAhorros+saldoCorriente
+        
+    def PasarAhorrosACorriente(self):
+        # forma1
+        # self.corriente.ConsignarMonto(self.ahorros.ConsultarSaldo())
+        # self.ahorros.RetirarMonto(self.ahorros.ConsultarSaldo())
+        
+        # forma 2
+        # saldoAhorros = self.ahorros.ConsultarSaldo()
+        # self.ConsignarCuentaCorriente(saldoAhorros)
+        # self.ahorros.RetirarMonto(self, saldoAhorros)
+        
+        #forma 3
+        saldoAhorros = self.ahorros.ConsultarSaldo()
+        self.corriente.saldo += saldoAhorros
+        self.ahorros.saldo = 0
     
-    def TransferirSaldoCorrienteaAhorros(self, monto):
-        #Aqui va el codigo
-
     def ConsultarSaldoCorriente(self):
         # Aqui va el codigo del metodo
-        return self.SaldoCuentaCorriente
+         return self.SaldoCuentaCorriente
     def RetirarTodo(self):
         # Aqui va el codigo
         SaldoRetirado = self.SaldoCuentaAhorros + self.SaldocuentaAhorros
