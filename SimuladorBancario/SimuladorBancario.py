@@ -28,10 +28,7 @@ class SimuladorBancario:
     
     def TransferirSaldoCorrienteaAhorros(self, monto):
         #Aqui va el codigo
-        monto <= self.SaldoCuentaCorriente
-        self.SaldoCuentaCorriente -= monto
-        self.consignarSaldoAhorros(monto)
-        return monto
+
     def ConsultarSaldoCorriente(self):
         # Aqui va el codigo del metodo
         return self.SaldoCuentaCorriente
