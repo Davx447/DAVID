@@ -23,12 +23,28 @@ class Empleado:
     # Metodos
     ----------------------------------------------------------------'''
     
-    def __init__(self, nombre, apellido, sexo, salario):
+    def __init__(self, nombre, apellido, sexo, salario, numerohijos):
         self.nombre = nombre
         self.apellido =apellido
         self.sexo = sexo
         self.salario = salario
+        self.numerohijos = numerohijos
+
+    def InformarNumeroHijos(self):
+        return self.numerohijos
     
+    def CalcularAuxilioEducativo(self):
+        AuxilioEducativo = self.salario * self.numerohijos * 0.05
+        return AuxilioEducativo
+    
+    def CalcularAuxilioEducativo(self, PorcentajeSalario):
+        AuxilioEducativo = self.salario * self.numerohijos * PorcentajeSalario
+        return AuxilioEducativo
+    
+    def CalcularDiferenciaSalarial(self, SalarioOtroEmpleado):
+        DiferenciaSalarial = self.salario - SalarioOtroEmpleado
+        return DiferenciaSalarial
+        
     def CambiarSalario(self, nuevoSalario):
         # Aqui va el codigo del metodo
         self.salario = nuevoSalario
