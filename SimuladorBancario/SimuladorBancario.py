@@ -8,6 +8,10 @@ class SimuladorBancario:
     cedula=""
     nombre=""
     mesActual=""
+    TipoCliente=""
+    """----------------------------
+    #1 = VIP , #2 = Platino y #3 = Normal
+    -------------------------------"""
     """---------------------------
     Asociaciones
     ------------------------------"""
