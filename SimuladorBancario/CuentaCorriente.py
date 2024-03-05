@@ -3,6 +3,7 @@ class CuentaCorriente:
     '''----------------------------------------------------------------
     # Metodos
     ----------------------------------------------------------------'''
+   
     def ConsultarSaldo(self):
         return self.saldo
     
@@ -23,5 +24,3 @@ class CuentaCorriente:
         # # Forma 3
         total = self.saldo - monto
         self.saldo = total
-        
-    
