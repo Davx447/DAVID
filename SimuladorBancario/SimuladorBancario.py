@@ -21,6 +21,13 @@ class SimuladorBancario:
     """-----------------------------
     Metodos
     ------------------------------"""
+    def __init__(self, tipo_cliente):
+        self.tipo_cliente = tipo_cliente
+    
+    def CambiarTipoCliente (self,nTipoCliente):
+        self.TipoCliente = nTipoCliente
+        return None
+        
     def ConsignarCuentaCorriente(self, monto):
         self.corriente.ConsignarMonto(monto)
         
