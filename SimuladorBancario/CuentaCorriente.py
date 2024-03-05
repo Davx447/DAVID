@@ -24,3 +24,8 @@ class CuentaCorriente:
         # # Forma 3
         total = self.saldo - monto
         self.saldo = total
+        
+    def RetirarMonto(self, monto):
+        self.saldo -= monto
+        descuento = monto * 0.01
+        self.saldo -= descuento
