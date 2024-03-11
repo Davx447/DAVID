@@ -14,3 +14,16 @@ else:
         print("El numero par ingresado no es divisible entre .3")
     else:
         print("El numero impar ingresado no es divisible entre .3")
+
+    Juan = 20
+    Pedro = 10
+    Javier = 50
+    Junior = 1
+
+    print(Juan > Pedro)
+    print(Juan > Pedro < Junior)
+    print(Juan < Pedro > Junior)
+    print(Junior < Pedro < Juan < Javier)
+    print(Pedro + Junior < Juan)
+    print(Pedro + Junior <= Juan)
+    print(Juan - Junior == Pedro)
