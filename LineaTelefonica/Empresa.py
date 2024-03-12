@@ -173,3 +173,7 @@ class Empresa:
     def metodo2(self):
         return "Respuesta 2"
 
+    def aplicarDescuentoATodos(self):
+        # Invocar el método aplicarDescuento() para cada línea de la empresa
+        descuento_total = self.linea1.aplicarDescuento() + self.linea2.aplicarDescuento() + self.linea3.aplicarDescuento()
+        return descuento_total
