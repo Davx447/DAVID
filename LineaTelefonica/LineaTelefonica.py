@@ -11,7 +11,16 @@ class LineaTelefonica:
     
     # Costo total de las llamadas
     costoLlamadas = ""
-    
+
+    #Estrate de la linea telefonica
+    estrato = 0
+
+    #Descuento aplicable a las llamadas ( valor entre 0.0 y 25.5)
+    descuento = 0.0
+
+    # Cantidad de dinero disponible para gastar (prepago)
+    prepago = 0.0
+
     '''----------------------------------------------------------------
     # Metodos
     ----------------------------------------------------------------'''
@@ -84,5 +93,21 @@ class LineaTelefonica:
         self.costoLlamadas += pMinutos * 999
         
         # TODO Parte2 PuntoG: Completar el método según la documentación dada.
-       
-
+    
+    def darDescuento(self):
+        return self.descuento
+    
+    def aplicarDescuento(self):
+        return (self.costoLlamadas * self.descuento) / 100
+    
+    def darSaldoDisponible(self):
+        return self.prepago
+    
+    def AgregarDineroASaldo(self, valor):
+        self.prepago += valor
+    
+    def motivarCliente(self):
+    # Calcular la cantidad de dinero a motivar
+    DineroAMotivar = (self.numeroMinutos // 30) * 1000
+    # Agregar el dinero motivado al saldo disponible del cliente
+    self.prepago += dinero_a_motivar
