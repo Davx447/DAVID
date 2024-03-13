@@ -44,15 +44,16 @@ class Empresa:
     def darTotalNumeroLlamadas(self):
         # Forma1
         # return self.linea1.darNumeroLlamadas()+self.linea2.darNumeroLlamadas()+self.linea3.darNumeroLlamadas()
-        total = LineaTelefonica(self.dartotalnumerollamadas())
-        # TODO Parte3 PuntoE: Completar el m�todo seg�n la documentaci�n dada.
+        Total = self.linea1.darNumeroLlamadas()+self.linea2.darNumeroLlamadas()+self.linea3.darNumeroLlamadas()
+        return Total
 
     '''
 	    # Retorna el total de minutos consumidos.
 	    # @return Total de minutos de las tres l�neas.
 	'''
     def darTotalMinutos(self):
-        total = LineaTelefonica(self.darTotalMinutos())
+        total = self.linea1.darNumeroMinutos()+self.linea2.darNumeroMinutos()+self.linea3.darNumeroMinutos()
+        return total
         # TODO Parte3 PuntoF: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -60,7 +61,8 @@ class Empresa:
 	    # @return Costo total de las tres l�neas.
     '''
     def darTotalCostoLlamadas(self):
-        total = LineaTelefonica(self.dartotalCostollamadas())
+        total = self.linea1.darCostoLlamadas()+self.linea2.darCostoLlamadas()+self.linea3.darCostoLlamadas()
+        return total
         # TODO Parte3 PuntoG: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
@@ -68,7 +70,8 @@ class Empresa:
 	    # @return Costo promedio por minuto.
     '''
     def darCostoPromedioMinuto(self):
-        Promedio = LineaTelefonica(self.darCostoPromedioMinuto())
+        Promedio = self.darTotalCostoLlamadas()/self.darTotalMinutos()
+        return Promedio
         # TODO Parte3 PuntoH: Completar el m�todo seg�n la documentaci�n dada.
 
     '''
