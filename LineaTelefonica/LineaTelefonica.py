@@ -12,7 +12,7 @@ class LineaTelefonica:
     # Costo total de las llamadas
     costoLlamadas = ""
 
-    #Estrate de la linea telefonica
+    #Estrato de la linea telefonica
     estrato = 0
 
     #Descuento aplicable a las llamadas ( valor entre 0.0 y 25.5)
@@ -21,15 +21,34 @@ class LineaTelefonica:
     # Cantidad de dinero disponible para gastar (prepago)
     prepago = 0.0
 
+    #Almacenar el total de segundos 
+    TotalSegundos = 0
+    
+    #Almacenar el costo de la llamada en dólares.
+    Costollamadadolares = 0
     '''----------------------------------------------------------------
     # Metodos
     ----------------------------------------------------------------'''
-    
+
     # Inicializar el número de llamadas, número de minutos y costo de llamadas en 0.
     def __init__(self):
         self.numeroLlamadas = 0
         self.numeroMinutos = 0
         self.costoLlamadas = 0
+        self.TotalSegundos = 0
+        self.Costollamadadolares = 0
+    
+    def reiniciar(self):
+        self.numeroLlamadas = 0
+        self.numeroMinutos = 0
+        self.costoLlamadas = 0
+        self.TotalSegundos = 0
+        self.Costollamadadolares = 0
+    
+    def convertirPesosADolares(self):
+        Convertido = float(self.costoLlamadas / 3100)
+        self.Costollamadadolares = Convertido
+        return Convertido
 
         # TODO Parte2 PuntoA: Completar el método según la documentación dada.
 
@@ -54,6 +73,8 @@ class LineaTelefonica:
         self.numeroLlamadas = 0
         self.numeroMinutos = 0
         self.costoLlamadas = 0
+        self.TotalSegundos = 0
+        self.Costollamadadolares = 0
 
         # TODO Parte2 PuntoE: Completar el método según la documentación dada.
 
@@ -67,6 +88,8 @@ class LineaTelefonica:
         self.numeroMinutos += pMinutos
         # Suma el costo (costo por minuto: 35 pesos)
         self.costoLlamadas += pMinutos * 35
+        DineroDisponible = self.darSaldoDisponible + self.AgregarDineroASaldo
+        return DineroDisponible
 
     """
         Agrega una llamada de larga distancia a la línea telefónica.
@@ -105,9 +128,8 @@ class LineaTelefonica:
     
     def AgregarDineroASaldo(self, valor):
         self.prepago += valor
+
+    def MotivarCliente(self):
+        if(self.darNumeroMinutos>30):
+            self.AgregarDineroASaldo + 1000 
     
-    def motivarCliente(self):
-    # Calcular la cantidad de dinero a motivar
-    DineroAMotivar = (self.numeroMinutos // 30) * 1000
-    # Agregar el dinero motivado al saldo disponible del cliente
-    self.prepago += dinero_a_motivar
