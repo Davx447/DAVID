@@ -26,6 +26,12 @@ class LineaTelefonica:
     
     #Almacenar el costo de la llamada en dólares.
     Costollamadadolares = 0
+
+    #Cantidad de minutos de llamadas a celular
+    minutosLlamadasCelular = 0
+    
+    #Costo total de minutos de llamadas a celular
+    costoLlamadasCelular = 0
     '''----------------------------------------------------------------
     # Metodos
     ----------------------------------------------------------------'''
@@ -37,6 +43,9 @@ class LineaTelefonica:
         self.costoLlamadas = 0
         self.TotalSegundos = 0
         self.Costollamadadolares = 0
+        self.costoLlamadasCelular = 0
+        self.minutosLlamadasCelular = 0
+
     
     def reiniciar(self):
         self.numeroLlamadas = 0
@@ -44,6 +53,8 @@ class LineaTelefonica:
         self.costoLlamadas = 0
         self.TotalSegundos = 0
         self.Costollamadadolares = 0
+        self.costoLlamadasCelular = 0
+        self.minutosLlamadasCelular = 0
     
     def convertirPesosADolares(self):
         Convertido = float(self.costoLlamadas / 3100)
@@ -113,7 +124,9 @@ class LineaTelefonica:
     def agregarLlamadaCelular(self, pMinutos):
         self.numeroLlamadas += 1
         self.numeroMinutos += pMinutos
+        self.minutosLlamadasCelular += pMinutos
         self.costoLlamadas += pMinutos * 999
+        self.costoLlamadasCelular += pMinutos * 999
         
         # TODO Parte2 PuntoG: Completar el método según la documentación dada.
     
@@ -128,8 +141,23 @@ class LineaTelefonica:
     
     def AgregarDineroASaldo(self, valor):
         self.prepago += valor
-
+    
     def MotivarCliente(self):
         if(self.darNumeroMinutos>30):
             self.AgregarDineroASaldo + 1000 
+
+    # Metodo que retorna el estrato de la linea.
+    def darEstrato(self):
+        return self.estrato
     
+    def definirEstrato(self, pEstrato):
+        self.estrato = pEstrato
+    
+    def darMinutosPorEstrato(self):
+        return self.numeroMinutos * self.estrato
+    
+    def darMinutosLlamadasCelular(self):
+        return self.minutosLlamadasCelular
+    
+    def darCostoLlamadasCelular(self):
+        return self.costoLlamadasCelular
